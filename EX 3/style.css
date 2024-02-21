@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image :url("Screenshot\ \(161\).png");
+    background-size :cover;
+}
+
+header {
+    
+    color: #100e0e;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #f30b2de2;
+}
+
+.login-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.description {
+    padding: 20px;
+}
+
+.special-dishes {
+padding: 20px;
+text-decoration-color: #ce2a2a;
+}
+
+.special-dishes table {
+    border: 5px solid #161414;
+}
+
+.special-dishes td {
+    padding: 10px;
+}
+
+.booking-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.dishes-offer {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.dish-images img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.booking-form {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: none;
+}
