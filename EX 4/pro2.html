@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort JavaScript Book Objects</title>
+    <script>
+        const books = [
+            { id: 2, title: "JavaScript: The Good Parts" },
+            { id: 1, title: "Eloquent JavaScript" },
+            { id: 3, title: "You Don't Know JS" }
+        ];
+
+        books.sort((a, b) => a.id - b.id);
+
+        document.write("Sorted Books based on ID: <br>");
+        books.forEach(book => {
+            document.write(`ID: ${book.id}, Title: ${book.title} <br>`);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

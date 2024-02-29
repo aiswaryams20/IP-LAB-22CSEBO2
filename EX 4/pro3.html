@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Dashes between Even Numbers</title>
+    <script>
+        function insertDashes(number) {
+            const str = number.toString();
+            let result = str[0];
+            for (let i = 1; i < str.length; i++) {
+                if (parseInt(str[i - 1]) % 2 === 0 && parseInt(str[i]) % 2 === 0) {
+                    result += '-' + str[i];
+                } else {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+        const inputNumber = '025468';
+        const dashedNumber = insertDashes(inputNumber);
+        document.write(`Original Number: ${inputNumber} <br>`);
+        document.write(`Number with dashes: ${dashedNumber}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
