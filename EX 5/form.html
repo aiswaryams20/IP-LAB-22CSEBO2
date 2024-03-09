@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    form {
+        margin-top: 20px;
+    }
+    input {
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+    .error {
+        color: red;
+    }
+    hr {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Validate Form Using JavaScript</h2>
+    <hr>
+    <form id="myForm" onsubmit="return validateForm()">
+        <input type="text" id="firstName" placeholder="First Name" required><br>
+        <input type="text" id="lastName" placeholder="Last Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="tel" id="mobile" placeholder="Mobile Number" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    var firstName = document.getElementById('firstName').value.trim();
+    var lastName = document.getElementById('lastName').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var mobile = document.getElementById('mobile').value.trim();
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
+    var lastNameRegex = /^[a-zA-Z]+$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var mobileRegex = /^\d{10}$/;
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!lastNameRegex.test(lastName)) {
+        alert('Last name must contain only letters without whitespace.');
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+
+    if (!mobileRegex.test(mobile)) {
+        alert('Mobile number must have 10 digits.');
+        return false;
+    }
+
+    if (!passwordRegex.test(password)) {
+        alert('Password must have at least one uppercase, lowercase, digit, special character, and be at least 8 characters long.');
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return false;
+    }
+
+    return true;
+}
+</script>
+</body>
+</html>
