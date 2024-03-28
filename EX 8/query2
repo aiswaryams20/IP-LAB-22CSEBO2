@@ -1,0 +1,43 @@
+<%--
+    Document   : newjsp
+    Created on : Mar 26, 2024, 1:44:32 PM
+    Author     : Administrator
+--%>
+
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        
+ <% Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/student");
+        Statement st  = c.createStatement();
+        ResultSet rs= st.executeQuery("SELECT AVG(age) AS avgAge FROM students");%>
+   
+             <table border="2">
+           
+            <tr><th>student_id</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>age</th>
+                <th>department</th></tr>
+            <% while(rs.next()) {%>
+            <tr>
+                <th></th><th></th><th></th><th></th>
+                <td>  <%out.println(rs.getString(1));%> </td>
+            </tr>
+               
+               <%}
+               %>
+        </table><br><br>
+    </body>
+</html>
+
+
+
+
