@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+  <employee>
+    <id>1</id>
+    <name>AAA</name>
+    <position>Software Engineer</position>
+    <department>Development</department>
+    <salary>75000</salary>
+  </employee>
+  <employee>
+    <id>2</id>
+    <name>BBB</name>
+    <position>Project Manager</position>
+    <department>Project Management</department>
+    <salary>85000</salary>
+  </employee>
+  <employee>
+    <id>3</id>
+    <name>CCC</name>
+    <position>HR Manager</position>
+    <department>Human Resources</department>
+    <salary>70000</salary>
+  </employee>
+  <employee>
+    <id>4</id>
+    <name>DDD</name>
+    <position>Marketing Specialist</position>
+    <department>Marketing</department>
+    <salary>65000</salary>
+  </employee>
+  <employee>
+    <id>5</id>
+    <name>EEE</name>
+    <position>Quality Assurance</position>
+    <department>Quality</department>
+    <salary>60000</salary>
+  </employee>
+</employees>
