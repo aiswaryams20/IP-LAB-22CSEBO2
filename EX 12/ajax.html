@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Search</title>
+    <script>
+        function getEmployeeDetails() {
+            var employeeId = document.getElementById("employeeId").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var xmlDoc = this.responseXML;
+                    var employees = xmlDoc.getElementsByTagName("employee");
+                    var employeeFound = false;
+                    var result = "";
+
+                    for (var i = 0; i < employees.length; i++) {
+                        var id = employees[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+
+                        if (id == employeeId) {
+                            var name = employees[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                            var position = employees[i].getElementsByTagName("position")[0].childNodes[0].nodeValue;
+                            var department = employees[i].getElementsByTagName("department")[0].childNodes[0].nodeValue;
+                            var salary = employees[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue;
+
+                            result = "Name: " + name + "<br>" +
+                                     "Position: " + position + "<br>" +
+                                     "Department: " + department + "<br>" +
+                                     "Salary: " + salary;
+
+                            employeeFound = true;
+                            break;
+                        }
+                    }
+
+                    if (!employeeFound) {
+                        result = "Employee with ID " + employeeId + " not found.";
+                    }
+
+                    document.getElementById("employeeDetails").innerHTML = result;
+                }
+            };
+
+            xhttp.open("GET", "employees.xml", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <h2>Employee Search</h2>
+    <input type="text" id="employeeId" placeholder="Enter Employee ID">
+    <button onclick="getEmployeeDetails()">Search</button>
+    <div id="employeeDetails"></div>
+</body>
+</html>
