@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="highlight_employees.xsl"?>
+<employees>
+    <employee>
+        <name>John Doe</name>
+        <salary>55000</salary>
+    </employee>
+    <employee>
+        <name>Jane Smith</name>
+        <salary>48000</salary>
+    </employee>
+    <employee>
+        <name>Sam Brown</name>
+        <salary>60000</salary>
+    </employee>
+    <employee>
+        <name>Anna Johnson</name>
+        <salary>45000</salary>
+    </employee>
+</employees>
